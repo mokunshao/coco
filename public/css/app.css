@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: black;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  color: white;
+}
+
+.navbar-right-button {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.home {
+  margin: auto;
+}
+
+.home-message {
+  margin: auto;
+  width: 90vw;
+}
+

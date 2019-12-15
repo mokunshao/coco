@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+}
+
+.navbar{
+    background-color: black;
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+
+    &-right-button{
+        cursor: pointer;
+        appearance: none;
+    }
+}
+
+.home{
+    margin: auto;
+
+    &-message{
+        margin: auto;
+        width: 90vw;
+    }
+}
