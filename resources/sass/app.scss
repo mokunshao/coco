@@ -3,12 +3,11 @@ body {
 }
 
 .navbar {
-  background-color: black;
+  border-bottom: 1px solid black;
   padding: 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
 
   &-right-button {
     cursor: pointer;
@@ -16,11 +15,9 @@ body {
   }
 }
 
-.home {
-  margin: auto;
-
-  &-message {
-    margin: auto;
-    width: 90vw;
-  }
-}
+// .home {
+//   &-message {
+//     margin: auto;
+//     width: 90vw;
+//   }
+// }

@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background-color: black;
+  border-bottom: 1px solid black;
   padding: 0.5em;
   display: -webkit-box;
   display: flex;
@@ -11,7 +11,6 @@ body {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  color: white;
 }
 
 .navbar-right-button {
@@ -19,14 +18,5 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.home {
-  margin: auto;
-}
-
-.home-message {
-  margin: auto;
-  width: 90vw;
 }
 
