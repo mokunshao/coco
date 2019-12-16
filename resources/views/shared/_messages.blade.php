@@ -1,9 +1,9 @@
-@foreach (['danger', 'warning', 'success', 'info'] as $msg)
+@foreach (['danger', 'warning', 'success', 'info'] as $key)
 
-@if(session()->has($msg))
+@if(session()->has($key))
 
-<div class="flash-message flash-message-{{$msg}}">
-    {{ session()->get($msg) }}
+<div class="flash-message flash-message-{{$key}}">
+    {{ session()->get($key) }}
 </div>
 
 @endif
