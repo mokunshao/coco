@@ -1,9 +1,15 @@
 @extends('layouts.default')
+
 @section('title', '注册')
 
 @section('content')
+
+@include('shared._errors')
+
 <form action="{{route('users.store')}}" method="post">
+
     @csrf
+
     <div>
         <label for="name">名称</label>
         <input id="name" type="text" name="name" value="{{ old('name') }}">
@@ -23,4 +29,5 @@
     </div>
     <button type="submit">注册</button>
 </form>
+
 @endsection
