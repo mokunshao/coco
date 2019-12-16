@@ -70,9 +70,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -82,9 +82,26 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $formData = $this->validate($request, [
+            'name' => 'required|max:50',
+            'password' => 'nullable|confirmed|min:6'
+        ]);
+
+        $is_not_null = function ($val) {
+            return !is_null($val);
+        };
+
+        $willUpdate = array_filter($formData, $is_not_null);
+
+        if (array_key_exists('password', $willUpdate)) {
+            $willUpdate['password'] = bcrypt($willUpdate['password']);
+        }
+
+        $user->update($willUpdate);
+        session()->flash('success', '资料修改成功');
+        return redirect()->route('users.show', $user);
     }
 
     /**

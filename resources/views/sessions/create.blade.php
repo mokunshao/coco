@@ -13,7 +13,7 @@
     </div>
     <div>
         <label for="password">密码</label>
-        <input id="password" type="password" name="password" value="{{ old('password') }}">
+        <input id="password" type="password" name="password">
     </div>
     <div>
         <input type="checkbox" name="remember" id="remember">
