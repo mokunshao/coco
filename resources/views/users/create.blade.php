@@ -24,7 +24,7 @@
     </div>
     <div>
         <label for="password_confirmation">确认密码</label>
-        <input id="password_confirmation" type="text" name="password_confirmation"
+        <input id="password_confirmation" type="password" name="password_confirmation"
             value="{{ old('password_confirmation') }}">
     </div>
     <button type="submit">注册</button>

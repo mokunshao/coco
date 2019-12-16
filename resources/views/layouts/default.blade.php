@@ -11,6 +11,7 @@
 
 <body>
     @include('layouts._header')
+    @include('shared._messages')
     @yield('content')
     <script src="{{mix('/js/app.js')}}"></script>
 </body>
