@@ -9,6 +9,10 @@ body {
   justify-content: space-between;
   align-items: center;
 
+  &-right {
+    display: flex;
+  }
+
   &-right-button {
     cursor: pointer;
     appearance: none;
