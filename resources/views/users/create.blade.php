@@ -30,4 +30,7 @@
     <button type="submit">注册</button>
 </form>
 
+<div>已经有账号？请<a href="{{route('login')}}">登录</a></div>
+
 @endsection
+
