@@ -15,7 +15,8 @@
         </form>
         @else
         <a href="{{route('help')}}" class="navbar-right-button">帮助</a>
-        <a href="{{route('signup')}}" class="navbar-right-button">登录</a>
+        <a href="{{route('signup')}}" class="navbar-right-button">注册</a>
+        <a href="{{route('login')}}" class="navbar-right-button">登录</a>
         @endif
     </div>
 </nav>
