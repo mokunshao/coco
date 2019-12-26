@@ -6,6 +6,7 @@
     </div>
     <div class="navbar-right">
         @if (Auth::check())
+        <span>{{Auth::user()->name}}</span>
         <a href="{{route('users.show',Auth::user())}}">个人中心</a>
         <a href="{{route('users.edit',Auth::user())}}">编辑资料</a>
         <form action="{{route('logout')}}" method="post">
