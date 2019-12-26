@@ -10,7 +10,7 @@ class SessionsController extends Controller
     public function __construct()
     {
         $this->middleware('guest', [
-            'only' => ['create']
+            'only' => ['create'],
         ]);
     }
 
@@ -31,10 +31,12 @@ class SessionsController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             session()->flash('success', '欢迎回来！');
             $default = route('users.show', [Auth::user()]);
+
             return redirect()->intended($default);
         }
 
         session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
+
         return redirect()->back()->withInput();
     }
 
@@ -42,6 +44,7 @@ class SessionsController extends Controller
     {
         Auth::logout();
         session()->flash('success', '您已成功退出！');
+
         return redirect('login');
     }
 }
