@@ -46,6 +46,7 @@ class UsersController extends Controller
         ]);
         $this->sendEmailConfirmationTo($user);
         session()->flash('success', '验证邮件已发送到你的注册邮箱上，请注意查收。');
+
         return redirect('/');
     }
 
@@ -70,7 +71,7 @@ class UsersController extends Controller
         ]);
 
         $is_not_null = function ($val) {
-            return !is_null($val);
+            return ! is_null($val);
         };
 
         $willUpdate = array_filter($formData, $is_not_null);
@@ -117,6 +118,7 @@ class UsersController extends Controller
 
         Auth::login($user);
         session()->flash('success', '恭喜你，邮箱验证成功！');
+
         return redirect()->route('users.show', [$user]);
     }
 }
