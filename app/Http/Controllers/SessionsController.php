@@ -26,18 +26,24 @@ class SessionsController extends Controller
             'password' => 'required',
         ]);
 
-        $remember = $request->remember;
+        $remember = $request->has('remember');
 
         if (Auth::attempt($credentials, $remember)) {
-            session()->flash('success', '欢迎回来！');
-            $default = route('users.show', [Auth::user()]);
+            if (Auth::user()->activated) {
+                session()->flash('success', '欢迎回来！');
+                $default = route('users.show', [Auth::user()]);
 
-            return redirect()->intended($default);
+                return redirect()->intended($default);
+            } else {
+                Auth::logout();
+                session()->flash('warning', '你的账号未激活，请检查邮箱中的注册邮件进行激活。');
+                return redirect()->back();
+            }
+        } else {
+            session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
+
+            return redirect()->back()->withInput();
         }
-
-        session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
-
-        return redirect()->back()->withInput();
     }
 
     public function destroy()
