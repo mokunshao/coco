@@ -5,6 +5,7 @@
         </a>
     </div>
     <div class="navbar-right">
+        <a href="{{route('users.index')}}">用户列表</a>
         @if (Auth::check())
         <span>{{Auth::user()->name}}</span>
         <a href="{{route('users.show',Auth::user())}}">个人中心</a>
