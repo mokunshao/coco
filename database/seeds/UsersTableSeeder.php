@@ -7,8 +7,6 @@ class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
@@ -17,6 +15,7 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'John Doe';
         $user->email = 'johndoe@me.com';
+        $user->is_admin = true;
         $user->save();
     }
 }
