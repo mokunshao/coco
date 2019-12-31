@@ -22,4 +22,5 @@
     <button type="submit">登录</button>
 </form>
 <div>没有注册？<a href="{{route('signup')}}">现在注册</a></div>
+<div>忘记密码？<a href="{{route('password.request')}}">现在找回</a></div>
 @endsection
