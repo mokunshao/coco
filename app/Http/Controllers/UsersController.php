@@ -52,7 +52,8 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $activities = $user->activities()->orderBy('created_at', 'desc')->paginate(10);
+        return view('users.show', compact('user', 'activities'));
     }
 
     public function edit(User $user)
@@ -71,7 +72,7 @@ class UsersController extends Controller
         ]);
 
         $is_not_null = function ($val) {
-            return ! is_null($val);
+            return !is_null($val);
         };
 
         $willUpdate = array_filter($formData, $is_not_null);
