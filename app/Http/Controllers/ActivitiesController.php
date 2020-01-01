@@ -15,7 +15,7 @@ class ActivitiesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'content' => 'required|max:140'
+            'content' => 'required|max:140',
         ]);
 
         Auth::user()->activities()->create([
@@ -23,11 +23,12 @@ class ActivitiesController extends Controller
         ]);
 
         session()->flash('success', '发布成功');
+
         return redirect()->back();
     }
 
     public function destroy(Request $request)
     {
-        # code...
+        // code...
     }
 }
