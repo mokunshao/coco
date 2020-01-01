@@ -1,9 +1,16 @@
 @extends('layouts.default')
+@section('title','首页')
+
 @section('content')
-<div class="home">
-    <div class="home-message">
-        <p>欢迎来到 coco 微博客社区</p>
-        <p>你可以注册或者登录</p>
-    </div>
+@if (Auth::check())
+<div>
+    @include('activities._activity_form')
+    @include('shared._user_info',['user'=>Auth::user()])
 </div>
+@else
+<div>
+    <p>欢迎来到 coco 微博客社区</p>
+    <p>你可以注册或者登录</p>
+</div>
+@endif
 @endsection
