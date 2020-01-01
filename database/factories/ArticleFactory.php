@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Activity;
+use App\Article;
 use Faker\Generator as Faker;
 
-$factory->define(Activity::class, function (Faker $faker) {
-    $date_time = $faker->date.' '.$faker->time;
+$factory->define(Article::class, function (Faker $faker) {
+    $date_time = $faker->date . ' ' . $faker->time;
 
     return [
         'content' => $faker->text(),

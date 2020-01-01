@@ -3,7 +3,7 @@
     <img src="{{ $user->gravatar() }}" alt="{{ $user->name }}" />
   </a>
   <div>
-    <h5>{{ $user->name }} <small> / {{ $activity->created_at->diffForHumans() }}</small></h5>
-    {{ $activity->content }}
+    <h5>{{ $user->name }} <small> / {{ $article->created_at->diffForHumans() }}</small></h5>
+    {{ $article->content }}
   </div>
 </li>

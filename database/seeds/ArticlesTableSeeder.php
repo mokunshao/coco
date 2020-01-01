@@ -1,9 +1,9 @@
 <?php
 
-use App\Activity;
+use App\Article;
 use Illuminate\Database\Seeder;
 
-class ActivitiesTableSeeder extends Seeder
+class ArticlesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,13 +14,13 @@ class ActivitiesTableSeeder extends Seeder
     {
         $usersId = [1, 2, 3];
         $faker = app(Faker\Generator::class);
-        $activities = factory(Activity::class)
+        $articles = factory(Article::class)
             ->times(50)
             ->make()
-            ->each(function ($activity) use ($faker, $usersId) {
-                $activity->user_id = $faker->randomElement($usersId);
+            ->each(function ($article) use ($faker, $usersId) {
+                $article->user_id = $faker->randomElement($usersId);
             });
 
-        Activity::insert($activities->toArray());
+        Article::insert($articles->toArray());
     }
 }

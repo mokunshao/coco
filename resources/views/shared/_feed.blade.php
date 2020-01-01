@@ -1,7 +1,7 @@
 @if ($feed->count() > 0)
 <ul>
-  @foreach ($feed as $activity)
-  @include('activities._activity', ['user' => $activity->user])
+  @foreach ($feed as $article)
+  @include('articles._article', ['user' => $article->user])
   @endforeach
 </ul>
 @else

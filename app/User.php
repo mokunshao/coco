@@ -54,13 +54,13 @@ class User extends Authenticatable
         });
     }
 
-    public function activities()
+    public function articles()
     {
-        return $this->hasMany(Activity::class);
+        return $this->hasMany(Article::class);
     }
 
     public function feed()
     {
-        return $this->activities()->orderBy('created_at', 'desc');
+        return $this->articles()->orderBy('created_at', 'desc');
     }
 }

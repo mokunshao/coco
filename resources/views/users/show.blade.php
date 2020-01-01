@@ -4,9 +4,9 @@
 @section('content')
 @include('shared._user_info',['user'=>$user])
 
-@if ($activities->count()>0)
-@foreach ($activities as $activity)
-@include('activities._activity')
+@if ($articles->count()>0)
+@foreach ($articles as $article)
+@include('articles._article')
 @endforeach
 @else
 <p>没有数据</p>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ActivitiesController extends Controller
+class ArticlesController extends Controller
 {
     public function __construct()
     {
@@ -18,7 +18,7 @@ class ActivitiesController extends Controller
             'content' => 'required|max:140',
         ]);
 
-        Auth::user()->activities()->create([
+        Auth::user()->articles()->create([
             'content' => $request['content'],
         ]);
 
