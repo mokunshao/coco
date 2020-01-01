@@ -6,6 +6,7 @@
 <div>
     @include('activities._activity_form')
     @include('shared._user_info',['user'=>Auth::user()])
+    @include('shared._feed')
 </div>
 @else
 <div>

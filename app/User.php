@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Activity::class);
     }
+
+    public function feed()
+    {
+        return $this->activities()->orderBy('created_at', 'desc');
+    }
 }
