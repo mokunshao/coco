@@ -6,7 +6,7 @@ use App\Article;
 use Faker\Generator as Faker;
 
 $factory->define(Article::class, function (Faker $faker) {
-    $date_time = $faker->date . ' ' . $faker->time;
+    $date_time = $faker->date.' '.$faker->time;
 
     return [
         'content' => $faker->text(),
