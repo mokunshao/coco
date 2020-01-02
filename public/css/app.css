@@ -50,18 +50,6 @@ a {
   border: 1px solid black;
 }
 
-.home {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-}
-
-.home-right {
-  width: 500px;
-}
-
 .article-form {
   box-sizing: border-box;
 }

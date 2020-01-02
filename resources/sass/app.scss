@@ -40,15 +40,6 @@ a {
   border: 1px solid black;
 }
 
-.home {
-  display: flex;
-  flex-direction: row;
-
-  &-right {
-    width: 500px;
-  }
-}
-
 .article-form {
   box-sizing: border-box;
 
