@@ -2,6 +2,19 @@ body {
   margin: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .navbar {
   border-bottom: 1px solid black;
   padding: 0.5em;
@@ -23,5 +36,48 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.user-info {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.home {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+.home-right {
+  width: 500px;
+}
+
+.article-form {
+  box-sizing: border-box;
+}
+
+.article-form textarea {
+  resize: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.article {
+  display: -webkit-box;
+  display: flex;
+}
+
+.article-avatar {
+  border-radius: 50%;
 }
 

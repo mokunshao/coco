@@ -3,10 +3,14 @@
 
 @section('content')
 @if (Auth::check())
-<div>
-    @include('articles._article_form')
-    @include('shared._user_info',['user'=>Auth::user()])
-    @include('shared._feed')
+<div class="home">
+    <div class="home-left">
+        @include('articles._article_form')
+        @include('shared._feed')
+    </div>
+    <div class="home-right">
+        @include('shared._user_info',['user'=>Auth::user()])
+    </div>
 </div>
 @else
 <div>

@@ -1,4 +1,4 @@
-<div>
+<div class="article-form">
   @include('shared._errors')
   <form action="{{ route('articles.store') }}" method="POST">
     @csrf

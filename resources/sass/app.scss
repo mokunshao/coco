@@ -2,6 +2,19 @@ body {
   margin: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .navbar {
   border-bottom: 1px solid black;
   padding: 0.5em;
@@ -19,9 +32,37 @@ body {
   }
 }
 
-// .home {
-//   &-message {
-//     margin: auto;
-//     width: 90vw;
-//   }
-// }
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+
+  &-right {
+    width: 500px;
+  }
+}
+
+.article-form {
+  box-sizing: border-box;
+
+  textarea {
+    resize: none;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.article {
+  display: flex;
+
+  &-avatar {
+    border-radius: 50%;
+  }
+}
