@@ -64,14 +64,14 @@ class User extends Authenticatable
         return $this->articles()->orderBy('created_at', 'desc');
     }
 
-    function followers()
+    public function followers()
     {
-        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id');
+        return $this->belongsToMany(self::class, 'followers', 'user_id', 'follower_id');
     }
 
-    function followings()
+    public function followings()
     {
-        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id');
+        return $this->belongsToMany(self::class, 'followers', 'follower_id', 'user_id');
     }
 
     public function follow(array $user_ids)
