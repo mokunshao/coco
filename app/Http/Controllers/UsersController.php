@@ -73,7 +73,7 @@ class UsersController extends Controller
         ]);
 
         $is_not_null = function ($val) {
-            return ! is_null($val);
+            return !is_null($val);
         };
 
         $willUpdate = array_filter($formData, $is_not_null);

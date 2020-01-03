@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{route('home')}}">
             COCO
@@ -17,7 +17,7 @@
             <form action="{{route('logout')}}" method="post" class="navbar-item">
                 @method('DELETE')
                 @csrf
-                <button class="button is-danger" type="submit">退出</button>
+                <button class="button is-danger is-outlined" type="submit">退出</button>
             </form>
             @else
             <div class="navbar-item">

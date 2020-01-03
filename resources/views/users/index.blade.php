@@ -6,5 +6,7 @@
 @foreach ($users as $user)
 @include('users._user')
 @endforeach
-{{$users->render()}}
+<nav class="pagination" role="navigation" aria-label="pagination">
+  {{$users->render()}}
+</nav>
 @endsection
