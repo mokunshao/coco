@@ -2,13 +2,18 @@
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
-        <img src="{{ $user->gravatar('50') }}" alt="Image">
+        <a href="{{route('users.show',$user)}}">
+          <img src="{{ $user->gravatar('50') }}" alt="Image">
+        </a>
       </figure>
     </div>
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{ $user->name }}</strong> <small>{{ $article->created_at->diffForHumans() }}</small>
+          <a href="{{route('users.show',$user)}}">
+            <strong>{{ $user->name }}</strong>
+          </a>
+          <small>{{ $article->created_at->diffForHumans() }}</small>
           <br>
           {{ $article->content }}
         </p>
