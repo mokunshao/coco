@@ -3,7 +3,7 @@
 
 @section('content')
 @if (Auth::check())
-<div class="home">
+<div class="container">
     @include('articles._article_form')
     @include('shared._feed')
 </div>
