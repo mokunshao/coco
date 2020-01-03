@@ -8,9 +8,23 @@
     @include('shared._feed')
 </div>
 @else
-<div>
-    <p>欢迎来到 coco 微博客社区</p>
-    <p>你可以注册或者登录</p>
+<section class="hero is-medium is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                欢迎来到 COCO 微博客社区
+            </h1>
+            <h2 class="subtitle">
+                你可以
+                <a href="{{route('signup')}}">注册</a>
+                或者
+                <a href="{{route('login')}}">登录</a>
+            </h2>
+        </div>
+    </div>
+</section>
+<div class="container">
+    TODO: 展示所有用户的微博（按时间倒序）
 </div>
 @endif
 @endsection
