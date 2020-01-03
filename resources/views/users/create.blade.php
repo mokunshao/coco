@@ -7,6 +7,7 @@
 @include('shared._errors')
 
 <div class="container">
+    <h1 class="title">注册</h1>
     <form action="{{route('users.store')}}" method="post">
         @csrf
         <div class="field">
