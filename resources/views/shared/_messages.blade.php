@@ -2,7 +2,7 @@
 
 @if(session()->has($key))
 
-<div class="flash-message flash-message-{{$key}}">
+<div class="notification is-{{$key}}">
     {{ session()->get($key) }}
 </div>
 
