@@ -1,16 +1,10 @@
 @if ($paginator->hasPages())
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+<nav class="pagination is-centered is-inline-flex" role="navigation" aria-label="pagination">
   {{-- Previous Page Link --}}
   @if ($paginator->onFirstPage())
   <a class="pagination-previous" disabled>上一页</a>
   @else
   <a class="pagination-previous" href="{{ $paginator->previousPageUrl() }}">上一页</a>
-  @endif
-  {{-- Next Page Link --}}
-  @if ($paginator->hasMorePages())
-  <a class="pagination-next" href="{{ $paginator->nextPageUrl() }}">下一页</a>
-  @else
-  <a class="pagination-next" disabled>下一页</a>
   @endif
   {{-- Pagination Elements --}}
   <ul class="pagination-list">
@@ -31,5 +25,11 @@
     @endif
     @endforeach
   </ul>
+  {{-- Next Page Link --}}
+  @if ($paginator->hasMorePages())
+  <a class="pagination-next" href="{{ $paginator->nextPageUrl() }}">下一页</a>
+  @else
+  <a class="pagination-next" disabled>下一页</a>
+  @endif
 </nav>
 @endif
