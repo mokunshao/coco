@@ -1,6 +1,8 @@
-<div class="user-info">
+<div class="block">
     <a href="{{ route('users.show', $user->id) }}">
         <img src="{{$user->gravatar()}}" alt="{{$user->name}}">
     </a>
-    <div>{{$user->name}}</div>
+    <a href="{{ route('users.show', $user->id) }}">
+        <div>{{$user->name}}</div>
+    </a>
 </div>
