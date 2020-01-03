@@ -7,6 +7,6 @@
 @include('users._user')
 @endforeach
 <nav class="pagination" role="navigation" aria-label="pagination">
-  {{$users->render()}}
+  {{$users->links()}}
 </nav>
 @endsection
