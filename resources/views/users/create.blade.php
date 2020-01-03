@@ -9,24 +9,32 @@
 <div class="container">
     <form action="{{route('users.store')}}" method="post">
         @csrf
-        <div>
-            <label for="name">名称</label>
-            <input id="name" type="text" name="name" value="{{ old('name') }}">
+        <div class="field">
+            <label class="label">名称</label>
+            <div class="control">
+                <input class="input" type="text" name="name" value="{{ old('name') }}">
+            </div>
         </div>
-        <div>
-            <label for="email">邮箱</label>
-            <input id="email" type="text" name="email" value="{{ old('email') }}">
+        <div class="field">
+            <label class="label">邮箱</label>
+            <div class="control">
+                <input class="input" type="text" name="email" value="{{ old('email') }}">
+            </div>
         </div>
-        <div>
-            <label for="password">密码</label>
-            <input id="password" type="password" name="password" value="{{ old('password') }}">
+        <div class="field">
+            <label class="label">密码</label>
+            <div class="control">
+                <input class="input" type="password" name="password" value="{{ old('password') }}">
+            </div>
         </div>
-        <div>
-            <label for="password_confirmation">确认密码</label>
-            <input id="password_confirmation" type="password" name="password_confirmation"
-                value="{{ old('password_confirmation') }}">
+        <div class="field">
+            <label class="label">确认密码</label>
+            <div class="control">
+                <input class="input" type="password" name="password_confirmation"
+                    value="{{ old('password_confirmation') }}">
+            </div>
         </div>
-        <button type="submit">注册</button>
+        <button class="button is-primary" type="submit">注册</button>
     </form>
     <div>已经有账号？请<a href="{{route('login')}}">登录</a></div>
 </div>
