@@ -15,9 +15,9 @@
                     </a>
                 </p>
                 <p class="subtitle is-6">
-                    <span>关注：？</span>
-                    <span>被关注：？</span>
-                    <span>微博数：？</span>
+                    <span>关注:{{count($user->followings)}}</span>
+                    <span>被关注:{{count($user->followers)}}</span>
+                    <span>微博数:{{$user->articles->count()}}</span>
                 </p>
             </div>
         </div>

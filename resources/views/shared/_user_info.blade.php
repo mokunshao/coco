@@ -6,8 +6,8 @@
         <div>{{$user->name}}</div>
     </a>
     <div>
-        <div>关注：？</div>
-        <div>被关注：？</div>
-        <div>微博数：？</div>
+        <div>关注:{{count($user->followings)}}</div>
+        <div>被关注:{{count($user->followers)}}</div>
+        <div>微博数:{{$user->articles->count()}}</div>
     </div>
 </div>
