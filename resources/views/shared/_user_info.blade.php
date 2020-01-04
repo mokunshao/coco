@@ -6,8 +6,14 @@
         <div>{{$user->name}}</div>
     </a>
     <div>
-        <div>关注:{{count($user->followings)}}</div>
-        <div>被关注:{{count($user->followers)}}</div>
-        <div>微博数:{{$user->articles->count()}}</div>
+        <a href="{{route('users.followings',$user)}}">
+            <span>关注:{{count($user->followings)}}</span>
+        </a>
+        <a href="{{route('users.followers',$user)}}">
+            <span>被关注:{{count($user->followers)}}</span>
+        </a>
+        <a href="{{route('users.show',$user)}}">
+            <span>微博数:{{$user->articles->count()}}</span>
+        </a>
     </div>
 </div>

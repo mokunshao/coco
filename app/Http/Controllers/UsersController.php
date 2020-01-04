@@ -22,8 +22,9 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::paginate(10);
+        $title = '全部用户';
 
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users', 'title'));
     }
 
     public function create()
@@ -73,7 +74,7 @@ class UsersController extends Controller
         ]);
 
         $is_not_null = function ($val) {
-            return ! is_null($val);
+            return !is_null($val);
         };
 
         $willUpdate = array_filter($formData, $is_not_null);
@@ -122,5 +123,19 @@ class UsersController extends Controller
         session()->flash('success', '恭喜你，邮箱验证成功！');
 
         return redirect()->route('users.show', [$user]);
+    }
+
+    public function followings(User $user)
+    {
+        $users = $user->followings()->paginate(10);
+        $title = $user->name . ' 关注的人';
+        return view('users.index', compact('users', 'title'));
+    }
+
+    public function followers(User $user)
+    {
+        $users = $user->followers()->paginate(10);
+        $title = $user->name . ' 的粉丝';
+        return view('users.index', compact('users', 'title'));
     }
 }

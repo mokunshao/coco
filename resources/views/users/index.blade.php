@@ -1,9 +1,9 @@
 @extends('layouts.default')
-@section('title','所有用户')
+@section('title',$title)
 
 @section('content')
 <div class="container">
-  <h1 class="title">所有用户</h1>
+  <h1 class="title">{{$title}}</h1>
   @foreach ($users as $user)
   @include('users._user')
   @endforeach
