@@ -24,7 +24,7 @@
     </div>
 </section>
 <div class="container">
-    TODO: 展示所有用户的微博（按时间倒序）
+    @include('shared._feed')
 </div>
 @endif
 @endsection
