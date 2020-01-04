@@ -5,6 +5,11 @@
     <a href="{{ route('users.show', $user->id) }}">
         <div>{{$user->name}}</div>
     </a>
+
+    @if (Auth::check())
+    @include('users._follow_form')
+    @endif
+
     <div>
         <a href="{{route('users.followings',$user)}}">
             <span>关注:{{count($user->followings)}}</span>
