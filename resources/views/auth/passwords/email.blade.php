@@ -17,7 +17,7 @@
     <div class="field">
       <label class="label">邮箱</label>
       <div class="control">
-        <input class="input" type="text" name="email">
+        <input class="input" type="email" name="email">
       </div>
     </div>
     <div><button class="button is-primary" type="submit">发送密码重置邮件</button></div>
