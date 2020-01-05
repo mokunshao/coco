@@ -18,7 +18,8 @@
           {{ $article->content }}
           <br>
           @can('destroy', $article)
-          <form action="{{route('articles.destroy',$article)}}" method="post">
+          <form action="{{route('articles.destroy',$article)}}" method="post"
+            onsubmit="return confirm('您确定要删除本条微博吗？');">
             @csrf
             @method('DELETE')
             <button class="button is-small is-danger is-outlined">删除</button>
