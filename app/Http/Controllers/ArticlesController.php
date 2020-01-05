@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,8 +28,11 @@ class ArticlesController extends Controller
         return redirect()->back();
     }
 
-    public function destroy(Request $request)
+    public function destroy(Article $article)
     {
-        // code...
+        $this->authorize('destroy', $article);
+        $article->delete();
+        session()->flash('success', '微博已被成功删除！');
+        return back();
     }
 }

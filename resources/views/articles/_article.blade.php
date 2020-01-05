@@ -16,6 +16,14 @@
           <small>{{ $article->created_at->diffForHumans() }}</small>
           <br>
           {{ $article->content }}
+          <br>
+          @can('destroy', $article)
+          <form action="{{route('articles.destroy',$article)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="button is-small is-danger is-outlined">删除</button>
+          </form>
+          @endcan
         </p>
       </div>
     </div>
