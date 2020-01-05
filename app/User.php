@@ -63,6 +63,7 @@ class User extends Authenticatable
     {
         $user_ids = $this->followings->pluck('id')->toArray();
         array_push($user_ids, $this->id);
+
         return Article::whereIn('user_id', $user_ids)->with('user')->orderBy('created_at', 'desc');
     }
 
