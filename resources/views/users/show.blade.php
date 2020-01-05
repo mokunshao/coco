@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-  @include('shared._user_info',['user'=>$user])
+  @include('shared._user_info',$user)
 
   @if ($articles->count()>0)
   @foreach ($articles as $article)

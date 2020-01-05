@@ -1,6 +1,6 @@
 @if ($feed->count() > 0)
 @foreach ($feed as $article)
-@include('articles._article', ['user' => $article->user])
+@include('articles._article', $article)
 @endforeach
 {{$feed->links()}}
 @else

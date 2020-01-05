@@ -10,7 +10,7 @@ class ArticlesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show']);
     }
 
     public function store(Request $request)
@@ -35,5 +35,10 @@ class ArticlesController extends Controller
         session()->flash('success', '微博已被成功删除！');
 
         return back();
+    }
+
+    public function show(Article $article)
+    {
+        return view('articles.show', compact('article'));
     }
 }

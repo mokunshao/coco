@@ -32,7 +32,7 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 
-Route::resource('articles', 'ArticlesController', ['only' => ['store', 'destroy']]);
+Route::resource('articles', 'ArticlesController', ['only' => ['store', 'destroy', 'show']]);
 
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
 Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
