@@ -91,4 +91,9 @@ class User extends Authenticatable
     {
         return $this->followings->contains($user->id);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
