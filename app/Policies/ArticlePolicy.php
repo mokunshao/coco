@@ -2,9 +2,9 @@
 
 namespace App\Policies;
 
+use App\Article;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Article;
 
 class ArticlePolicy
 {
@@ -20,8 +20,8 @@ class ArticlePolicy
         //
     }
 
-    public function destroy(User $user,Article $article)
+    public function destroy(User $user, Article $article)
     {
-        return $user->id===$article->user_id;
+        return $user->id === $article->user_id;
     }
 }

@@ -33,6 +33,7 @@ class ArticlesController extends Controller
         $this->authorize('destroy', $article);
         $article->delete();
         session()->flash('success', '微博已被成功删除！');
+
         return back();
     }
 }
