@@ -3,11 +3,16 @@
 @section('content')
 <div class="container">
   @include('articles._article', $article)
-  @include('comments._comments_form')
-  <ul>
+  @include('comments._comment_form')
+  <div>
+    <h2 class="title">评论：</h2>
+    @if ($article->comments->count()>0)
     @foreach ($article->comments as $comment)
-    <li>{{$comment->user->name}} : {{$comment->content}} - {{$comment->created_at->diffForHumans()}}</li>
+    @include('comments._comment')
     @endforeach
-  </ul>
+    @else
+    <div>还没有人评论过。</div>
+    @endif
+  </div>
 </div>
 @endsection
