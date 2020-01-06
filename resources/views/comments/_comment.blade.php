@@ -18,14 +18,14 @@
           {{ $comment->content }}
           <br>
           <div class="is-flex is-marginless">
-            {{-- @can('destroy', $comment) --}}
+            @can('destroy', $comment)
             <form action="{{route('comments.destroy',$comment)}}" method="post"
               onsubmit="return confirm('您确定要删除该评论吗？');">
               @csrf
               @method('DELETE')
               <button class="button is-small is-danger is-outlined">删除</button>
             </form>
-            {{-- @endcan --}}
+            @endcan
           </div>
         </p>
       </div>
