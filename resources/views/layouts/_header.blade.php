@@ -11,7 +11,7 @@
         </div>
 
         <div class="navbar-end">
-            @if (Auth::check())
+            @auth
             <a class="navbar-item" href="{{route('users.show',Auth::user())}}">{{Auth::user()->name}}</a>
             <a class="navbar-item" href="{{route('users.edit',Auth::user())}}">编辑资料</a>
             <form action="{{route('logout')}}" method="post" class="navbar-item">
@@ -19,7 +19,8 @@
                 @csrf
                 <button class="button is-danger is-outlined" type="submit">退出</button>
             </form>
-            @else
+            @endauth
+            @guest
             <div class="navbar-item">
                 <div class="buttons">
                     <a class="button is-primary" href="{{route('signup')}}">
@@ -30,7 +31,7 @@
                     </a>
                 </div>
             </div>
-            @endif
+            @endguest
         </div>
     </div>
 </nav>

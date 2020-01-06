@@ -2,12 +2,14 @@
 @section('title','首页')
 
 @section('content')
-@if (Auth::check())
+@auth
 <div class="container">
     @include('articles._article_form')
     @include('shared._feed')
 </div>
-@else
+@endauth
+
+@guest
 <section class="hero is-medium is-primary is-bold">
     <div class="hero-body">
         <div class="container">
@@ -26,5 +28,5 @@
 <div class="container">
     @include('shared._feed')
 </div>
-@endif
+@endguest
 @endsection

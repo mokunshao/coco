@@ -6,9 +6,9 @@
         <div>{{$user->name}}</div>
     </a>
 
-    @if (Auth::check())
+    @auth
     @include('users._follow_form')
-    @endif
+    @endauth
 
     <div>
         <a href="{{route('users.followings',$user)}}">

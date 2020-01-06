@@ -24,9 +24,9 @@
             <form action="{{route('likes.store')}}" method="post">
               @csrf
               <input type="hidden" name="article_id" value="{{$article->id}}">
-              @if(Auth::check())
+              @auth
               <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-              @endif
+              @endauth
               <button class="button is-small {{$article->isLike()?'is-primary':''}}">👍{{$article->likes->count()}}
               </button>
             </form>
