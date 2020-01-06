@@ -13,7 +13,7 @@
           <a href="{{route('users.show',$article->user)}}">
             <strong>{{ $article->user->name }}</strong>
           </a>
-          <small>{{ $article->created_at->diffForHumans() }}</small>
+          <small>{{ $article->created_at->diffForHumans() }} {{$article->comments->count()}}条评论</small>
           <br>
           {{ $article->content }}
           <br>

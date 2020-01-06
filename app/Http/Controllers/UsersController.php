@@ -53,7 +53,7 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        $articles = $user->articles()->with('likes', 'user')->orderBy('created_at', 'desc')->paginate(10);
+        $articles = $user->articles()->with('likes', 'user', 'comments')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('users.show', compact('user', 'articles'));
     }
