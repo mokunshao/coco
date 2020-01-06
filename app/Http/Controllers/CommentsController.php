@@ -83,6 +83,7 @@ class CommentsController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        return back();
     }
 }
