@@ -40,6 +40,7 @@ class ArticlesController extends Controller
     public function show(Article $article)
     {
         $comments = $article->comments()->with('user')->paginate();
+
         return view('articles.show', compact('article', 'comments'));
     }
 }
