@@ -41,3 +41,5 @@ Route::post('/users/followers/{user}', 'FollowersController@store')->name('follo
 Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
 
 Route::resource('comments', 'CommentsController', ['only' => ['store', 'destroy']]);
+
+Route::resource('likes', 'LikesController', ['only' => ['store', 'destroy']]);

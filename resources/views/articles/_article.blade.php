@@ -21,6 +21,12 @@
             <a href="{{route('articles.show',$article)}}">
               <button class="button is-small">详情</button>
             </a>
+            <form action="{{route('likes.store')}}" method="post">
+              @csrf
+              <input type="hidden" name="article_id" value="{{$article->id}}">
+              <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+              <button class="button is-small">👍{{$article->likes->count()}}</button>
+            </form>
             @can('destroy', $article)
             <form action="{{route('articles.destroy',$article)}}" method="post"
               onsubmit="return confirm('您确定要删除本条微博吗？');">

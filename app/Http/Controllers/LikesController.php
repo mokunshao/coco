@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
+use App\Like;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CommentsController extends Controller
+class LikesController extends Controller
 {
     public function __construct()
     {
@@ -39,19 +40,22 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        Comment::create($request->all());
-        session()->flash('success', '发表评论成功');
+        $this->validate(request(), [
+            'user_id' => 'required',
+            'article_id' => 'required'
+        ]);
 
+        Like::create($request->all());
         return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Comment  $comment
+     * @param  \App\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
+    public function show(Like $like)
     {
         //
     }
@@ -59,10 +63,10 @@ class CommentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Comment  $comment
+     * @param  \App\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit(Like $like)
     {
         //
     }
@@ -71,10 +75,10 @@ class CommentsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comment  $comment
+     * @param  \App\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request, Like $like)
     {
         //
     }
@@ -82,13 +86,11 @@ class CommentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Comment  $comment
+     * @param  \App\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy(Like $like)
     {
-        $comment->delete();
-
-        return back();
+        //
     }
 }
