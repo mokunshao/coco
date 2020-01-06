@@ -28,7 +28,7 @@ class Article extends Model
 
     public function isLike()
     {
-        if (! Auth::check()) {
+        if (!Auth::check()) {
             return false;
         }
         if ($this->likes->count() > 0) {

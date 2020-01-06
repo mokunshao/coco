@@ -53,7 +53,7 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        $articles = $user->articles()->orderBy('created_at', 'desc')->paginate(10);
+        $articles = $user->articles()->with('likes', 'user')->orderBy('created_at', 'desc')->paginate(10);
 
         return view('users.show', compact('user', 'articles'));
     }
@@ -74,7 +74,7 @@ class UsersController extends Controller
         ]);
 
         $is_not_null = function ($val) {
-            return ! is_null($val);
+            return !is_null($val);
         };
 
         $willUpdate = array_filter($formData, $is_not_null);
@@ -128,7 +128,7 @@ class UsersController extends Controller
     public function followings(User $user)
     {
         $users = $user->followings()->paginate(10);
-        $title = $user->name.' 关注的人';
+        $title = $user->name . ' 关注的人';
 
         return view('users.index', compact('users', 'title'));
     }
@@ -136,7 +136,7 @@ class UsersController extends Controller
     public function followers(User $user)
     {
         $users = $user->followers()->paginate(10);
-        $title = $user->name.' 的粉丝';
+        $title = $user->name . ' 的粉丝';
 
         return view('users.index', compact('users', 'title'));
     }
