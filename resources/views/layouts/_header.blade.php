@@ -3,8 +3,13 @@
         <a class="navbar-item" href="{{route('home')}}">
             COCO
         </a>
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
-    <div class="navbar-menu">
+    <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
             <a class="navbar-item" href="{{route('users.index')}}">用户列表</a>
             <a class="navbar-item" href="{{route('help')}}">帮助</a>
