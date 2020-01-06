@@ -12,6 +12,7 @@ class LikesController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +43,7 @@ class LikesController extends Controller
     {
         $this->validate(request(), [
             'user_id' => 'required',
-            'article_id' => 'required'
+            'article_id' => 'required',
         ]);
 
         $result = Like::where(['user_id' => $request->user_id, 'article_id' => $request->article_id])->first();
@@ -52,6 +53,7 @@ class LikesController extends Controller
         }
 
         Like::create($request->all());
+
         return back();
     }
 
