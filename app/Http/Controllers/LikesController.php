@@ -45,6 +45,12 @@ class LikesController extends Controller
             'article_id' => 'required'
         ]);
 
+        $result = Like::where(['user_id' => $request->user_id, 'article_id' => $request->article_id])->first();
+
+        if ($result && $result->count() > 0) {
+            return $this->destroy($result);
+        }
+
         Like::create($request->all());
         return back();
     }
@@ -91,6 +97,7 @@ class LikesController extends Controller
      */
     public function destroy(Like $like)
     {
-        //
+        $like->delete();
+        return back();
     }
 }

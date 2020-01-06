@@ -24,8 +24,11 @@
             <form action="{{route('likes.store')}}" method="post">
               @csrf
               <input type="hidden" name="article_id" value="{{$article->id}}">
+              @if(Auth::check())
               <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-              <button class="button is-small">👍{{$article->likes->count()}}</button>
+              @endif
+              <button
+                class="button is-small {{$article->isLike()?'is-primary':''}}">👍{{$article->likes->count()}}</button>
             </form>
             @can('destroy', $article)
             <form action="{{route('articles.destroy',$article)}}" method="post"

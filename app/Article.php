@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Article extends Model
 {
@@ -23,5 +24,16 @@ class Article extends Model
     public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+
+    public function isLike()
+    {
+        if (!Auth::check()) return false;
+        if ($this->likes->count() > 0) {
+            foreach ($this->likes as $like) {
+                if ($like->user_id === Auth::user()->id) return true;
+            }
+        }
+        return false;
     }
 }
