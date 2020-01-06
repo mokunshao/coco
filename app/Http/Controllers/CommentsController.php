@@ -37,6 +37,7 @@ class CommentsController extends Controller
     {
         Comment::create($request->all());
         session()->flash('success', '发表评论成功');
+
         return back();
     }
 
