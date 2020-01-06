@@ -100,6 +100,7 @@ class LikesController extends Controller
     public function destroy(Like $like)
     {
         $like->delete();
+
         return back();
     }
 }

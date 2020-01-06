@@ -28,12 +28,17 @@ class Article extends Model
 
     public function isLike()
     {
-        if (!Auth::check()) return false;
+        if (! Auth::check()) {
+            return false;
+        }
         if ($this->likes->count() > 0) {
             foreach ($this->likes as $like) {
-                if ($like->user_id === Auth::user()->id) return true;
+                if ($like->user_id === Auth::user()->id) {
+                    return true;
+                }
             }
         }
+
         return false;
     }
 }
