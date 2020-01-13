@@ -74,7 +74,7 @@ class UsersController extends Controller
         ]);
 
         $is_not_null = function ($val) {
-            return ! is_null($val);
+            return !is_null($val);
         };
 
         $willUpdate = array_filter($formData, $is_not_null);
@@ -102,13 +102,11 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'coco@coco.com';
-        $name = 'coco';
         $to = $user->email;
         $subject = '感谢注册 coco！请确认你的邮箱。';
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
-            $message->from($from, $name)->to($to)->subject($subject);
+        Mail::send($view, $data, function ($message) use ($to, $subject) {
+            $message->to($to)->subject($subject);
         });
     }
 
@@ -128,7 +126,7 @@ class UsersController extends Controller
     public function followings(User $user)
     {
         $users = $user->followings()->paginate(10);
-        $title = $user->name.' 关注的人';
+        $title = $user->name . ' 关注的人';
 
         return view('users.index', compact('users', 'title'));
     }
@@ -136,7 +134,7 @@ class UsersController extends Controller
     public function followers(User $user)
     {
         $users = $user->followers()->paginate(10);
-        $title = $user->name.' 的粉丝';
+        $title = $user->name . ' 的粉丝';
 
         return view('users.index', compact('users', 'title'));
     }
