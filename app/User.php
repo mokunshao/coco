@@ -77,7 +77,7 @@ class User extends Authenticatable
         return $this->belongsToMany(self::class, 'followers', 'follower_id', 'user_id');
     }
 
-    public function follow(self $user)
+    public function follow($user)
     {
         $this->followings()->sync($user, false);
     }
